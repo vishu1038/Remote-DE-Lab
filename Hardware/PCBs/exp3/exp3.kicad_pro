@@ -380,7 +380,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "specctra_dsn": "",
+      "specctra_dsn": "exp3.dsn",
       "step": "",
       "vrml": ""
     },
