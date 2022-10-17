@@ -333,7 +333,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "exp11.kicad_pro",
+    "filename": "exp1.2.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -394,15 +394,6 @@
       "version": 1
     },
     "net_format_name": "",
-    "ngspice": {
-      "fix_include_paths": true,
-      "fix_passive_vals": false,
-      "meta": {
-        "version": 0
-      },
-      "model_mode": 0,
-      "workbook_filename": ""
-    },
     "page_layout_descr_file": "",
     "plot_directory": "",
     "spice_adjust_passive_values": false,
@@ -412,7 +403,7 @@
   },
   "sheets": [
     [
-      "2f826767-7a78-489a-9eaf-0a88fe429901",
+      "db294eec-a5fd-41d6-9dab-78d42cfc2621",
       ""
     ]
   ],
