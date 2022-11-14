@@ -365,8 +365,8 @@
     "last_paths": {
       "gencad": "",
       "idf": "",
-      "netlist": "",
-      "specctra_dsn": "",
+      "netlist": "C:/Users/agarw/Downloads/",
+      "specctra_dsn": "exp11.dsn",
       "step": "",
       "vrml": ""
     },
