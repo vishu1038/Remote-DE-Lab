@@ -9,6 +9,12 @@ void setup(){
 
   pinMode(output2, OUTPUT);
   digitalWrite(output2, LOW);
+
+  pinMode(output3, OUTPUT);
+  digitalWrite(output3, LOW);
+
+  pinMode(input, INPUT);
+
   
   // Connect to Wi-Fi
   wifi_setup();

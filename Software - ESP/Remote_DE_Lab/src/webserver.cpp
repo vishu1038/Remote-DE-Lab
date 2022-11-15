@@ -2,8 +2,12 @@
 
 const char* PARAM_INPUT_1 = "state";
 const char* PARAM_INPUT_2 = "state2";
-const int output = 2;
-const int output2 = 15;
+const char* PARAM_INPUT_3 = "state3";
+const char* PARAM_INPUT_4 = "state4";
+const int output = 15;
+const int output2 = 2;
+const int output3 = 4;
+const int input = 5;
 
 AsyncWebServer server(80);
 
@@ -12,6 +16,7 @@ const char index_html[] PROGMEM = R"rawliteral(
 <head>
   <title>ESP Web Server</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="refresh" content="5">
   <style>
     html {font-family: Arial; display: inline-block; text-align: center;}
     h2 {font-size: 2.6rem;}
@@ -27,10 +32,14 @@ const char index_html[] PROGMEM = R"rawliteral(
 <body>
   <h2>ESP Web Server</h2>
   <button onclick="logoutButton()">Logout</button>
-  <p><!-- Ouput - GPIO 2 - State --><span id="state">%STATE%</span></p>
+  <p><!-- Output - GPIO 15 - State --><span id="state">%STATE%</span></p>
   %BUTTONPLACEHOLDER%
-  <p><!-- Ouput - GPIO 15 - State --><span id="state2">%STATE2%</span></p>
+  <p><!-- Output - GPIO 2 - State --><span id="state2">%STATE2%</span></p>
   %BUTTONPLACEHOLDER2%
+  <p><!-- Output - GPIO 4 - State --><span id="state3">%STATE3%</span></p>
+  %BUTTONPLACEHOLDER3%
+  <p><!-- Input - GPIO 5 - State --><span id="state4">%STATE4%</span></p>
+  %BUTTONPLACEHOLDER4%
 
 <script>function toggleCheckbox(element) {
   var xhr = new XMLHttpRequest();
@@ -53,6 +62,30 @@ function toggleCheckbox2(element) {
   else { 
     xhr.open("GET", "/update?state2=0", true); 
     document.getElementById("state2").innerHTML = "OFF";      
+  }
+  xhr.send();
+}
+function toggleCheckbox3(element) {
+  var xhr = new XMLHttpRequest();
+  if(element.checked){ 
+    xhr.open("GET", "/update?state3=1", true); 
+    document.getElementById("state3").innerHTML = "ON";  
+  }
+  else { 
+    xhr.open("GET", "/update?state3=0", true); 
+    document.getElementById("state3").innerHTML = "OFF";      
+  }
+  xhr.send();
+}
+function toggleCheckbox4(element) {
+  var xhr = new XMLHttpRequest();
+  if(element.checked){ 
+    xhr.open("GET", "/update?state4=1", true); 
+    document.getElementById("state4").innerHTML = "ON";  
+  }
+  else { 
+    xhr.open("GET", "/update?state4=0", true); 
+    document.getElementById("state4").innerHTML = "OFF";      
   }
   xhr.send();
 }
@@ -94,6 +127,18 @@ String processor(const String& var){
     buttons+= "<p><label class=\"switch\"><input type=\"checkbox\" onchange=\"toggleCheckbox2(this)\" id=\"output2\" " + outputStateValue + "><span class=\"slider\"></span></label></p>";
     return buttons;
   }
+  if(var == "BUTTONPLACEHOLDER3"){
+  String buttons ="";
+  String outputStateValue = outputState3();
+  buttons+= "<p><label class=\"switch\"><input type=\"checkbox\" onchange=\"toggleCheckbox3(this)\" id=\"output3\" " + outputStateValue + "><span class=\"slider\"></span></label></p>";
+  return buttons;
+  }
+  if(var == "BUTTONPLACEHOLDER4"){
+  String buttons ="";
+  String outputStateValue = inputState();
+  buttons+= "<p><label class=\"switch\"><input type=\"checkbox\" onchange=\"toggleCheckbox4(this)\" id=\"input\" " + outputStateValue + "><span class=\"slider\"></span></label></p>";
+  return buttons;
+  }
   if (var == "STATE"){
     if(digitalRead(output)){
       return "ON";
@@ -104,6 +149,22 @@ String processor(const String& var){
   }
   if (var == "STATE2"){
     if(digitalRead(output2)){
+      return "ON";
+    }
+    else {
+      return "OFF";
+    }
+  }
+  if (var == "STATE3"){
+    if(digitalRead(output3)){
+      return "ON";
+    }
+    else {
+      return "OFF";
+    }
+  }
+  if (var == "STATE4"){
+    if(digitalRead(input)){
       return "ON";
     }
     else {
@@ -133,6 +194,25 @@ String outputState2(){
   return "";
 }
 
+String outputState3(){
+  if(digitalRead(output3)){
+    return "checked";
+  }
+  else {
+    return "";
+  }
+  return "";
+}
+
+String inputState(){
+  if(digitalRead(input)){
+    return "checked";
+  }
+  else {
+    return "";
+  }
+  return "";
+}
 
 void wifi_setup()
 {
@@ -189,8 +269,24 @@ void server_startup()
             inputMessage = "No message sent";
             inputParam = "none";
         }
+        if (request->hasParam(PARAM_INPUT_3)) {
+            inputMessage = request->getParam(PARAM_INPUT_3)->value();
+            inputParam = PARAM_INPUT_3;
+            digitalWrite(output3, inputMessage.toInt());
+        }
+        else {
+            inputMessage = "No message sent";
+            inputParam = "none";
+        }
         Serial.println(inputMessage);
-        request->send(200, "text/plain", "OK");
+        if(digitalRead(input))
+        {
+            request->send(200, "text/plain", "OUt = 1");
+        }
+        else
+        {
+            request->send(200, "text/plain", "OUt = 0");
+        }
     });
 
     // Start server
