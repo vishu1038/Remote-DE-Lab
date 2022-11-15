@@ -1,0 +1,179 @@
+body {
+    font-family: "Lato", sans-serif;
+   background-color: #ECEFF4;
+ 
+ }
+ 
+   
+ .demo {
+     /* for IE10+ touch devices */
+     touch-action:none;
+ }
+ /** JSPLUMB ARTEFACTS **/
+ .jtk-overlay {
+     z-index: 51;
+ }
+ 
+ .jtk-endpoint {
+     z-index: 50;
+     cursor: move;
+ }
+ 
+ .jtk-connector {
+     z-index: 1;
+ }
+ 
+ /** ELEMENTS **/
+ .littledot
+ {
+     cursor: pointer;
+     width: 12px;
+     height: 12px;
+     background-image: url(littledot.png);
+     z-index: 5;
+     position: absolute;
+     border-radius: 31px;
+ }
+ 
+ 
+ 
+ .littledot-hover-hover {
+     border: 2px solid orange;
+ }
+ 
+ .dropHover {
+     border: 1px solid orange;
+ }
+ 
+ /** ELEMENT POSITIONS **/
+ #ld1 {
+     top: 16em;
+     left: 24em;
+ }
+ 
+#ld2 {
+  top: 23.5em;
+  left: 24em;
+}
+
+ #ld3 {
+    top: 31em;
+    left: 24em;
+ }
+ 
+ #ld4 {
+     top: 17.25em;
+     left: 36em;
+ }
+ 
+ #ld5{
+     top: 19.5em;
+     left: 36em;
+ }
+ 
+ #ld6 {
+     top: 21.5em;
+     left: 36em;
+ }
+ #ld7 {
+     top: 23.5em;
+     left: 36em;
+ }
+ #ld8 {
+     top: 25.5em;
+     left: 36em;
+ }
+ #ld9 {
+     top: 27.75em;
+     left: 36em;
+ }
+ #ld10 {
+     top: 30em;
+     left: 36em;
+ }
+ #ld11 {
+     top: 17.25em;
+     left: 50.5em;
+ }
+ #ld12 {
+    top: 19.5em;
+    left: 50.5em;
+}
+#ld13 {
+    top: 21.5em;
+    left: 50.5em;
+}
+#ld14 {
+    top: 23.5em;
+    left: 50.5em;
+}
+#ld15 {
+    top: 25.5em;
+    left: 50.5em;
+}
+#ld16 {
+  top: 27.75em;
+  left: 50.5em;
+}
+#ld17 {
+  top: 30em;
+  left: 50.5em;
+}
+
+ path, .jtk-endpoint {
+     cursor: pointer;
+ }
+ h1
+   {
+     color: maroon;
+   } 
+   #wrapper
+   {
+     width:100%;
+   }
+  
+   .dropbtn
+   {
+     background-color:#3385ff;
+     color: white;
+     padding: 16px;
+     font-size: 16px;
+     border: none;
+     cursor: pointer;
+   }
+   .dropbtn:hover, .dropbtn:focus
+   {
+     background-color: blue;
+   }
+   .dropdown
+   {
+     position: relative;
+     display: inline-block;
+   }
+   .dropdown-content
+   {
+     display: none;
+     position: relative;
+     background-color: lightblue ;
+     min-width: 750px;
+     overflow: auto;
+     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+     z-index: 1;
+   }
+   .dropdown-content a 
+   {
+     color: navy;
+     padding: 12px 16px;
+     text-decoration: none;
+     display: block;
+   }
+   .dropdown a:hover 
+   {
+     background-color: mistyrose;
+   }
+   .show 
+   {
+     display:block;
+   }
+ 
+ 

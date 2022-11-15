@@ -1,0 +1,31 @@
+<%- include("partials/header"); -%>
+    <h3>Experiment No.2: Realization of Parallel Adder /Subtractors using IC7483 chip.</h3>
+    <h4>Aim:- To Realize Parallel Adder /subtractor using IC7483 chip</h4>
+    <h4> Apparatus Required:- IC 7483, IC 7486</h4>
+    <h4>Procedure: -</h4>
+    <ol>
+        <li>
+            Make the connections as shown in the fig.
+        </li>
+        <li>
+            For Addition make Cin=0 and apply 4 bits of input for A and apply another set of 4 bit to B. 
+            Observe the output at S3 S2 S1 S0 and Carry generated at Cout. 
+            Repeat the steps for different inputs and tabulate the results.
+        </li>
+        <li>
+            For Subtraction, Cin=1(A-B)<br>
+            By XOR-ing the i/p bits of B by1,1’s complement of B is obtained.
+        </li>
+        <li>
+            Verify the the difference at S0,S1,S2,S3 and Cout. <br>
+            If Cout is 0, difference is _ve and difference is in 2’s complement. <br>
+            If Cout is 1, difference is +ve.
+        </li>
+        <li>
+            5. Repeat the above steps and tabulate the result.<br>
+            Cin=0 to Add / 1 to Subtract
+        </li>
+    </ol>
+    <h4>Circuit Diagram: </h4>
+    <img src="/images/experiment-2/circuitDiagram.png" style="width: 50%; height: 60%;">
+<%- include("partials/footer"); -%>

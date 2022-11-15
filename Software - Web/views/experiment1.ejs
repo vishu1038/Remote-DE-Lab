@@ -1,0 +1,58 @@
+<%- include("partials/header"); -%>
+    <h3>Experiment No. 1: Simplification, realization of Boolean expression using logic gates/universal gates.</h1>
+    <h4> 
+        Aim:- Simplification, realization of Boolean expression using logic gates/universal gates.
+    </h4>
+    <h4>
+        Components required:- IC Trainer Kit , patch chords, IC 7408, IC7432, IC7400 
+    </h4>
+     <h4>
+        Simplification of expression:-
+    </h4>
+    <ol>
+        <li>
+            <p>
+                1) Y = A(B’+C)’ (BC)’ <br>
+                    = A(B’+C)’ (B’+C’) :by DeMorgan’s theorem <br>
+                    = A(BC’) (B’+C’) <br>
+                    = ABC’ (B’+C’) :byDistribution <br>
+                    = ABB’C’+ABC’C’ :By idempotence and identity <br>
+                    = A.0.C’+ABC’ =ABC’ <br>
+            </p>
+        </li>
+        <li>
+            <p>
+                2) Y = (A,B,C,D)= ∑(5,7,9,11,13,15) <br>
+                Write the expression using K-map <br>
+                A ’BC’D+A ’BCD+AB’C’D+AB’CD+ABC’D+ABCD = A ’BD(C+C’)+AB’D(C+C’)+ABD(C+C’) <br>
+                =A ’BD+AB’D+ABD <br>
+                =BD(A+A ’)+AB’D <br>
+                =BD+AB’D =D(B+AB’) <br>
+                =D(A+B) =AD+BD <br>
+            </p>
+        </li>
+    </ol>
+    <h4>Implementation using</h4>
+    <h5>Basic Gates:</h5>
+    <img src="/images/experiment-1/BasicGates.png" alt="Basic Gates">
+    <h5> Universal Gates: </h5>
+    <img src="/images/experiment-1/UniversalGates.png" alt="UniversalGates Gates">
+    <h4>Procedure: </h4>
+    <ol>
+        <li>
+            <p>Place the IC in the socket of the trainer kit.</p>
+        </li>
+        <li>
+            <p>Make the connections as shown in the circuit diagram.</p>
+        </li>
+        <li>
+            <p>Make the connections as shown in the circuit diagram.</p>
+        </li>
+        <li>
+            <p>Apply the different combinations of input according to truth table and verify the output.</p>
+        </li>
+    </ol>
+
+    <p><br><br></p>
+        <a href="exp1/index" style="font-size: 30px;"><p class="homeParagraph"> PERFORM EXPERIMENT </p></a>  
+<%- include("partials/footer"); -%>
