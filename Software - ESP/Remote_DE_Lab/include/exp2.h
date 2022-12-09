@@ -30,6 +30,7 @@
 
 extern AsyncWebServer server;
 
+void exp2_init();
 void exp2();
 
 

@@ -2,6 +2,20 @@
 
 extern AsyncWebServer server;
 
+void exp1_init()
+{
+    pinMode(EXP1_A, OUTPUT);
+    digitalWrite(EXP1_A, LOW);
+
+    pinMode(EXP1_D, OUTPUT);
+    digitalWrite(EXP1_D, LOW);
+
+    pinMode(EXP1_B, OUTPUT);
+    digitalWrite(EXP1_B, LOW);
+
+    pinMode(EXP1_Y, INPUT);
+}
+
 void exp1()
 {
     // Send a GET request to <ESP_IP>/update?state=<inputMessage>
