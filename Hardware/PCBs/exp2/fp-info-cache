@@ -1,4 +1,4 @@
-20335573931380925
+20337243064836246
 ADM3051CRZ
 ADM3051CRZ
 
@@ -53101,6 +53101,13 @@ heatsink
 0
 2
 1
+IOEXPANDE
+jgg
+
+
+0
+0
+0
 Inductor_SMD
 L_6.3x6.3_H3
 Choke, SMD, 6.3x6.3mm 3mm height
