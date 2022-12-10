@@ -2,6 +2,7 @@
 #include "exp1.h"
 #include "exp2.h"
 #include "exp3.h"
+#include "exp6a.h"
 
 AsyncWebServer server(80);
 
@@ -34,6 +35,7 @@ void server_startup()
     exp1();
     exp2();
     exp3();
+    exp6a();
 
     // Start server
     server.begin();
