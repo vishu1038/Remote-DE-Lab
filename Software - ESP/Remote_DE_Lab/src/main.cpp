@@ -4,6 +4,7 @@
 #include "exp2.h"
 #include "exp3.h"
 #include "exp6a.h"
+#include "exp11.h"
 
 
 void setup() {
@@ -21,6 +22,7 @@ void setup() {
   exp2_init();
   exp3_init();
   exp6a_init();
+  exp11_init();
 
   //Start Server
   server_startup();

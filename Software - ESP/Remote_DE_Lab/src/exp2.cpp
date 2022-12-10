@@ -4,12 +4,6 @@ extern AsyncWebServer server;
 
 void exp2_init()
 {
-    pinMode(EXP2_CO,  INPUT);
-    pinMode(EXP2_S3,  INPUT);
-    pinMode(EXP2_S2,  INPUT);
-    pinMode(EXP2_S1,  INPUT);
-    pinMode(EXP2_S0,  INPUT);
-
     pinMode(EXP2_A3, OUTPUT);
     pinMode(EXP2_A2, OUTPUT);
     pinMode(EXP2_A1, OUTPUT);
@@ -29,6 +23,13 @@ void exp2_init()
     digitalWrite(EXP2_B1, LOW);
     digitalWrite(EXP2_B0, LOW);
     digitalWrite(EXP2_Cin, LOW);
+    
+    pinMode(EXP2_CO,  INPUT);
+    pinMode(EXP2_S3,  INPUT);
+    pinMode(EXP2_S2,  INPUT);
+    pinMode(EXP2_S1,  INPUT);
+    pinMode(EXP2_S0,  INPUT);
+
 }
 
 void exp2()

@@ -8,11 +8,11 @@
 #define EXP3_IO1_A0 3
 #define EXP3_IO1_A1 4
 
-#define EXP3_IO1_S3 5
-#define EXP3_IO1_S2 6
-#define EXP3_IO1_CO 7
-#define EXP3_IO1_S1 8
-#define EXP3_IO1_S0 9
+#define EXP3_IO1_S3 15
+#define EXP3_IO1_S2 14
+#define EXP3_IO1_CO 13
+#define EXP3_IO1_S1 12
+#define EXP3_IO1_S0 11
 
 //Server parameters
 #define PARAM3_A3 "a3"
