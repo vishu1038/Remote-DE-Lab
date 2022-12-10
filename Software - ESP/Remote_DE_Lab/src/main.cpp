@@ -2,6 +2,7 @@
 #include "ioexpander.h"
 #include "exp1.h"
 #include "exp2.h"
+#include "exp3.h"
 
 
 void setup() {
@@ -13,8 +14,8 @@ void setup() {
 
   // Exp Initializations
   exp1_init();
-
   exp2_init();
+  exp3_init();
 
   // Connect to Wi-Fi
   wifi_setup();

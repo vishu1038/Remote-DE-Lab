@@ -1,17 +1,18 @@
 #include "webserver.h"
+#include "ioexpander.h"
 
 //ESP Pins
-#define EXP3_IO_A3 0
-#define EXP3_IO_A2 1
-#define EXP3_IO_Cin 2
-#define EXP3_IO_A0 3
-#define EXP3_IO_A1 4
+#define EXP3_IO1_A3 0
+#define EXP3_IO1_A2 1
+#define EXP3_IO1_Cin 2
+#define EXP3_IO1_A0 3
+#define EXP3_IO1_A1 4
 
-#define EXP3_IO_S3 5
-#define EXP3_IO_S2 6
-#define EXP3_IO_CO 7
-#define EXP3_IO_S1 8
-#define EXP3_IO_S0 9
+#define EXP3_IO1_S3 5
+#define EXP3_IO1_S2 6
+#define EXP3_IO1_CO 7
+#define EXP3_IO1_S1 8
+#define EXP3_IO1_S0 9
 
 //Server parameters
 #define PARAM3_A3 "a3"
@@ -22,6 +23,7 @@
 
 extern AsyncWebServer server;
 
+void exp3_init();
 void exp3();
 
 

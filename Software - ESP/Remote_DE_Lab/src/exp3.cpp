@@ -2,6 +2,27 @@
 
 extern AsyncWebServer server;
 
+void exp3_init()
+{
+    io1.pinMode(EXP3_IO1_A3 , OUTPUT);
+    io1.pinMode(EXP3_IO1_A2 , OUTPUT);
+    io1.pinMode(EXP3_IO1_Cin, OUTPUT);
+    io1.pinMode(EXP3_IO1_A0 , OUTPUT);
+    io1.pinMode(EXP3_IO1_A1 , OUTPUT);
+
+    io1.digitalWrite(EXP3_IO1_A3 , LOW);
+    io1.digitalWrite(EXP3_IO1_A2 , LOW);
+    io1.digitalWrite(EXP3_IO1_Cin, LOW);
+    io1.digitalWrite(EXP3_IO1_A0 , LOW);
+    io1.digitalWrite(EXP3_IO1_A1 , LOW);
+
+    io1.pinMode(EXP3_IO1_S3, INPUT);
+    io1.pinMode(EXP3_IO1_S2, INPUT);
+    io1.pinMode(EXP3_IO1_CO, INPUT);
+    io1.pinMode(EXP3_IO1_S1, INPUT);
+    io1.pinMode(EXP3_IO1_S0, INPUT);
+}
+
 void exp3()
 {
     // Send a GET request to <ESP_IP>/update?state=<inputMessage>
@@ -14,55 +35,55 @@ void exp3()
         if (request->hasParam(PARAM3_A0)) {
             inputMessage = request->getParam(PARAM3_A0)->value();
             inputParam = PARAM3_A0;
-            digitalWrite(EXP3_IO_A0, inputMessage.toInt());
+            io1.digitalWrite(EXP3_IO1_A0, inputMessage.toInt());
         }
         if (request->hasParam(PARAM3_A1)) {
             inputMessage = request->getParam(PARAM3_A1)->value();
             inputParam = PARAM3_A1;
-            digitalWrite(EXP3_IO_A1, inputMessage.toInt());
+            io1.digitalWrite(EXP3_IO1_A1, inputMessage.toInt());
         }
         if (request->hasParam(PARAM3_A2)) {
             inputMessage = request->getParam(PARAM3_A2)->value();
             inputParam = PARAM3_A2;
-            digitalWrite(EXP3_IO_A2, inputMessage.toInt());
+            io1.digitalWrite(EXP3_IO1_A2, inputMessage.toInt());
         }
         if (request->hasParam(PARAM3_A3)) {
             inputMessage = request->getParam(PARAM3_A3)->value();
             inputParam = PARAM3_A3;
-            digitalWrite(EXP3_IO_A3, inputMessage.toInt());
+            io1.digitalWrite(EXP3_IO1_A3, inputMessage.toInt());
         }
         if (request->hasParam(PARAM3_Cin)) {
             inputMessage = request->getParam(PARAM3_Cin)->value();
             inputParam = PARAM3_Cin;
-            digitalWrite(EXP3_IO_Cin, inputMessage.toInt());
+            io1.digitalWrite(EXP3_IO1_Cin, inputMessage.toInt());
         }
 
         String outData = "";
-        if(digitalRead(EXP3_IO_S0)) {   
+        if(io1.digitalRead(EXP3_IO1_S0)) {   
             outData += "s0=1,";
         }
         else {
             outData += "s0=0,";
         }
-        if(digitalRead(EXP3_IO_S1)) {   
+        if(io1.digitalRead(EXP3_IO1_S1)) {   
             outData += "s1=1,";
         }
         else {
             outData += "s1=0,";
         }
-        if(digitalRead(EXP3_IO_S2)) {   
+        if(io1.digitalRead(EXP3_IO1_S2)) {   
             outData += "s2=1,";
         }
         else {
             outData += "s2=0,";
         }
-        if(digitalRead(EXP3_IO_S3)) {   
+        if(io1.digitalRead(EXP3_IO1_S3)) {   
             outData += "s3=1,";
         }
         else {
             outData += "s3=0,";
         }
-        if(digitalRead(EXP3_IO_CO)) {   
+        if(io1.digitalRead(EXP3_IO1_CO)) {   
             outData += "co=1";
         }
         else {
